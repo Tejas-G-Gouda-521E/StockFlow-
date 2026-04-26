@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockFlow Login</title>
+
+  <!-- Theme preload (keep) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <!-- Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+    <span class="theme-toggle__label">🌙</span>
+  </button>
+
+  <main class="card" aria-labelledby="loginTitle">
+    <div class="logo">S</div>
+
+    <h1 id="loginTitle">StockFlow</h1>
+    <p class="subtitle">Inventory &amp; Order Management</p>
+
+    <!-- 🔥 IMPORTANT: novalidate disables browser popup -->
+    <form class="auth-form" id="loginForm" novalidate>
+      <div class="input-group">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="Enter email">
+        <!-- 🔥 custom error (same as signup) -->
+        <p class="field-error" id="loginEmailError"></p>
+      </div>
+
+      <div class="input-group">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="Enter password">
+        <!-- 🔥 custom error -->
+        <p class="field-error" id="loginPasswordError"></p>
+      </div>
+
+      <!-- 🔥 form-level message -->
+      <p class="form-message" id="loginMessage"></p>
+
+      <button class="primary-button" type="submit">Sign In →</button>
+    </form>
+
+    <p class="auth-switch">
+      Don't have an account? <a href="signup.html">Sign Up</a>
+    </p>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
