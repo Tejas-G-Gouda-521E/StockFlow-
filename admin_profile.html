@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow Admin Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand__mark">SF</div>
+                <div>
+                    <p class="brand__eyebrow">Inventory Suite</p>
+                    <h1 class="brand__name">StockFlow</h1>
+                </div>
+            </div>
+
+            <nav class="sidebar__nav" aria-label="Primary navigation">
+                <a class="nav-link" href="Admin_dashboard.html" id="dashboardNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3zm10 8h8V11h-8zM3 21h8v-6H3zm10-10h8V3h-8z"/></svg>
+                    </span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="admin_shop.html" id="shopNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5zm2.5-.5a.5.5 0 0 0-.5.5V10h12V7.5a.5.5 0 0 0-.5-.5zM6 12v4.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V12z"/></svg>
+                    </span>
+                    <span>Shop</span>
+                </a>
+                <a class="nav-link" href="admin_orders.html" id="ordersNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M7 4h10l1 2h3v2h-1l-1.7 7.1A3 3 0 0 1 15.4 18H9a3 3 0 0 1-2.9-2.3L4.2 8H3V6h3zm1.3 4 1.4 5.4a1 1 0 0 0 1 .8h4.7a1 1 0 0 0 1-.8L17.8 8zM9 20a1.5 1.5 0 1 0 0 .01zm7 0a1.5 1.5 0 1 0 0 .01z"/></svg>
+                    </span>
+                    <span>Orders</span>
+                </a>
+                <a class="nav-link" href="admin_suppliers.html" id="suppliersNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4m-7 8v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1zm12.5-8.5A2.5 2.5 0 1 0 15 9a2.5 2.5 0 0 0 2.5 2.5M19 20v-1a4.9 4.9 0 0 0-1.2-3.2A4 4 0 0 1 21 19v1z"/></svg>
+                    </span>
+                    <span>Suppliers</span>
+                </a>
+            </nav>
+
+            <section class="profile-card" id="adminProfileCard" aria-label="Admin profile" role="button" tabindex="0">
+                <div class="profile-card__avatar" id="adminSidebarAvatar" aria-hidden="true">
+                    <span id="adminSidebarAvatarLetter">A</span>
+                </div>
+                <div class="profile-card__body">
+                    <h2 id="adminSidebarName">Admin</h2>
+                    <p id="adminSidebarMeta">admin@gmail.com</p>
+                </div>
+                <button class="profile-card__button" id="adminViewProfileButton" type="button">View Profile</button>
+            </section>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar__left">
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div>
+                        <p class="topbar__eyebrow">Account Details</p>
+                        <h2 class="topbar__title">Admin Profile</h2>
+                    </div>
+                </div>
+
+                <div class="topbar__actions">
+                    <span class="role-badge">Admin</span>
+                    <button class="logout-button" type="button">Logout</button>
+                </div>
+            </header>
+
+            <section class="admin-profile-layout reveal-section" aria-labelledby="adminProfileName">
+                <article class="panel-card admin-profile-panel">
+                    <p class="panel-card__eyebrow">Account Details</p>
+                    <div class="admin-profile-panel__avatar" id="adminProfileAvatar" aria-hidden="true">
+                        <span id="adminProfileAvatarLetter">A</span>
+                    </div>
+                    <h3 class="admin-profile-panel__name" id="adminProfileName">Admin</h3>
+                    <p class="admin-profile-panel__email" id="adminProfileEmail">admin@gmail.com</p>
+
+                    <div class="admin-profile-panel__upload">
+                        <label class="inventory-button inventory-button--ghost" for="adminProfileImageInput">Upload Image</label>
+                        <input id="adminProfileImageInput" type="file" accept="image/*" hidden>
+                    </div>
+
+                    <div class="admin-profile-panel__details">
+                        <div class="admin-profile-panel__detail">
+                            <span class="admin-profile-panel__label">Name</span>
+                            <input class="admin-profile-panel__input" id="adminProfileFullNameInput" type="text" placeholder="Enter your name">
+                        </div>
+                        <div class="admin-profile-panel__detail">
+                            <span class="admin-profile-panel__label">Email</span>
+                            <input class="admin-profile-panel__input" id="adminProfileEmailInput" type="email" placeholder="Enter your email">
+                        </div>
+                        <div class="admin-profile-panel__detail">
+                            <span class="admin-profile-panel__label">Phone</span>
+                            <input class="admin-profile-panel__input" id="adminProfilePhoneInput" type="tel" placeholder="Not added">
+                        </div>
+                    </div>
+
+                    <p class="admin-profile-panel__feedback" id="adminProfileFeedbackMessage" hidden>Profile updated successfully.</p>
+
+                    <div class="admin-profile-panel__actions">
+                        <button class="inventory-button inventory-button--primary" id="adminSaveProfileButton" type="button">Save Changes</button>
+                        <button class="inventory-button inventory-button--ghost" id="adminProfileLogoutButton" type="button">Logout</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

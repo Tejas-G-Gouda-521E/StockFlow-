@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFlow Admin Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand__mark">SF</div>
+                <div>
+                    <p class="brand__eyebrow">Inventory Suite</p>
+                    <h1 class="brand__name">StockFlow</h1>
+                </div>
+            </div>
+
+            <nav class="sidebar__nav" aria-label="Primary navigation">
+                <a class="nav-link" href="Admin_dashboard.html" id="dashboardNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3zm10 8h8V11h-8zM3 21h8v-6H3zm10-10h8V3h-8z"/></svg>
+                    </span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="admin_shop.html" id="shopNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5zm2.5-.5a.5.5 0 0 0-.5.5V10h12V7.5a.5.5 0 0 0-.5-.5zM6 12v4.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V12z"/></svg>
+                    </span>
+                    <span>Shop</span>
+                </a>
+                <a class="nav-link" href="admin_orders.html" id="ordersNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M7 4h10l1 2h3v2h-1l-1.7 7.1A3 3 0 0 1 15.4 18H9a3 3 0 0 1-2.9-2.3L4.2 8H3V6h3zm1.3 4 1.4 5.4a1 1 0 0 0 1 .8h4.7a1 1 0 0 0 1-.8L17.8 8zM9 20a1.5 1.5 0 1 0 0 .01zm7 0a1.5 1.5 0 1 0 0 .01z"/></svg>
+                    </span>
+                    <span>Orders</span>
+                </a>
+                <a class="nav-link" href="admin_suppliers.html" id="suppliersNavLink">
+                    <span class="nav-link__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4m-7 8v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1zm12.5-8.5A2.5 2.5 0 1 0 15 9a2.5 2.5 0 0 0 2.5 2.5M19 20v-1a4.9 4.9 0 0 0-1.2-3.2A4 4 0 0 1 21 19v1z"/></svg>
+                    </span>
+                    <span>Suppliers</span>
+                </a>
+            </nav>
+
+            <section class="profile-card" id="adminProfileCard" aria-label="Admin profile" role="button" tabindex="0">
+                <div class="profile-card__avatar" id="adminSidebarAvatar" aria-hidden="true">
+                    <span id="adminSidebarAvatarLetter">A</span>
+                </div>
+                <div class="profile-card__body">
+                    <h2 id="adminSidebarName">Admin</h2>
+                    <p id="adminSidebarMeta">admin@gmail.com</p>
+                </div>
+                <button class="profile-card__button" id="adminViewProfileButton" type="button">View Profile</button>
+            </section>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar__left">
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div>
+                        <p class="topbar__eyebrow">Catalog</p>
+                        <h2 class="topbar__title">Shop</h2>
+                    </div>
+                </div>
+
+                <div class="topbar__actions">
+                    <span class="role-badge">Admin</span>
+                    <button class="logout-button" type="button">Logout</button>
+                </div>
+            </header>
+
+            <section class="inventory-section reveal-section" aria-labelledby="inventoryPageTitle">
+                <article class="panel-card inventory-bulk">
+                    <div class="inventory-bulk__content">
+                        <div>
+                            <p class="panel-card__eyebrow">Bulk Import</p>
+                            <h3>Bulk Import</h3>
+                            <p class="inventory-bulk__copy">Upload CSV to create or update products</p>
+                        </div>
+                        <div class="inventory-bulk__actions">
+                            <button class="inventory-button inventory-button--ghost" type="button">Choose CSV</button>
+                            <button class="inventory-button inventory-button--primary" type="button">Upload CSV</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel-card inventory-card">
+                    <div class="inventory-toolbar">
+                        <div>
+                            <p class="panel-card__eyebrow">Catalog</p>
+                            <h3 id="inventoryPageTitle">Inventory</h3>
+                        </div>
+                            <button class="inventory-button inventory-button--primary" id="adminAddProductButton" type="button">+ Add Product</button>
+                    </div>
+
+                    <div class="inventory-filters">
+                        <label class="inventory-search">
+                            <span class="sr-only">Search products</span>
+                            <input id="adminInventorySearchInput" type="search" placeholder="Search products...">
+                        </label>
+                        <label class="inventory-select">
+                            <span class="sr-only">Filter products</span>
+                            <select id="adminInventoryFilterSelect">
+                                <option value="all" selected>All</option>
+                                <option value="In Stock">In Stock</option>
+                                <option value="Low Stock">Low Stock</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="inventory-table-wrap">
+                        <table class="inventory-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>SKU</th>
+                                    <th>Supplier</th>
+                                    <th>Stock</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminInventoryTableBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="inventory-empty-state" id="adminInventoryEmptyState" hidden>
+                        <span class="inventory-empty-state__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6l2 2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2 2v10h12V7h-4.2l-2-2z"/></svg>
+                        </span>
+                        <p id="adminInventoryEmptyMessage">No products available.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <div class="admin-modal-backdrop" id="adminProductModalBackdrop" hidden>
+        <div class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="adminProductModalTitle">
+            <div class="admin-modal__header">
+                <div>
+                    <p class="panel-card__eyebrow">Inventory Manager</p>
+                    <h3 id="adminProductModalTitle">Add Product</h3>
+                </div>
+                <button class="admin-modal__close" id="adminProductModalClose" type="button" aria-label="Close product form">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form class="admin-modal__form" id="adminProductForm" novalidate>
+                <div class="admin-modal__grid">
+                    <label class="admin-modal__field">
+                        <span>Name</span>
+                        <input id="adminProductNameInput" type="text" placeholder="Enter product name" required>
+                    </label>
+                    <label class="admin-modal__field">
+                        <span>SKU</span>
+                        <input id="adminProductSkuInput" type="text" placeholder="Enter SKU" required>
+                    </label>
+                    <label class="admin-modal__field">
+                        <span>Supplier</span>
+                        <input id="adminProductSupplierInput" type="text" placeholder="Enter supplier name" required>
+                    </label>
+                    <label class="admin-modal__field">
+                        <span>Stock</span>
+                        <input id="adminProductStockInput" type="number" min="0" step="1" placeholder="0" required>
+                    </label>
+                    <label class="admin-modal__field">
+                        <span>Price</span>
+                        <input id="adminProductPriceInput" type="number" min="0" step="0.01" placeholder="0.00" required>
+                    </label>
+                </div>
+
+                <p class="admin-modal__feedback" id="adminProductFormFeedback" hidden></p>
+
+                <div class="admin-modal__actions">
+                    <button class="inventory-button inventory-button--ghost" id="adminProductModalCancel" type="button">Cancel</button>
+                    <button class="inventory-button inventory-button--primary" id="adminProductFormSubmit" type="submit">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal-overlay" hidden>
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+            <h2 id="deleteModalTitle">Delete Product</h2>
+            <p id="deleteModalMessage">Are you sure you want to delete this product?</p>
+            <div class="modal-actions">
+                <button id="cancelDelete" class="btn-cancel" type="button">Cancel</button>
+                <button id="confirmDelete" class="btn-delete" type="button">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
